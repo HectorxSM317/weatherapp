@@ -18,4 +18,4 @@ app.use('/api', router)
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
 
-module.exports = { app } 
+module.exports =  app
