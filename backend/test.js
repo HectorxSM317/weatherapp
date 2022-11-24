@@ -2,7 +2,7 @@ const request = require("supertest");
 const { expect } = require("chai");
 const app = require("./index.js");
 
-describe("Test api routes: '/ping, '/api/', '/api/crearAeropuertos', '/api/vi/aeropuertos", () => {
+describe("Test api routes: '/ping, '/api/', '/api/crearAeropuertos', '/api/v1/aeropuertos", () => {
   it("Test prueba route '/ping", (done) => {
     request(app)
       .get("/ping")
@@ -20,7 +20,7 @@ describe("Test api routes: '/ping, '/api/', '/api/crearAeropuertos', '/api/vi/ae
   it("Obtener el clima de todos los aeropuertos", async () => {
     const response = await request(app)
       .get("/api/")
-      .query({ at: "2022-11-25T09:00:00" })
+      .query({ at: "2022-11-24T06:00:00" })
       .set("Accept", "application/json");
     expect(response.status).to.eql(200);
     expect(response.body).to.be.an("array").to.have.lengthOf(3);
@@ -59,6 +59,7 @@ describe("Test api routes: '/ping, '/api/', '/api/crearAeropuertos', '/api/vi/ae
     const icaoCode = "SAME";
     const response = await request(app)
       .get(`/api/v1/aeropuertos/${icaoCode}`)
+
       .query({
         desde: "2022-11-24T15:00:00",
         hasta: "2022-11-28T15:00:00",
