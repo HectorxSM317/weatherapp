@@ -75,3 +75,45 @@ Comando:
 ```sh
 npm test
 ```
+
+## Instrucciones conexión local
+
+Clonar repo:
+
+```sh
+git clone https://github.com/HectorxSM317/weatherapp.git
+```
+
+Instalar dependencias:
+
+```sh
+cd backend && npm install
+```
+
+Base de datos con Docker Compose:
+
+```sh
+docker-compose up -d
+```
+
+Levantar backend:
+
+```sh
+npm run dev
+```
+
+Con siguiente endpoint, se realiza una solicitud a la base de datos de la api [Open Weather  Map API](https://openweathermap.org/current#home)
+
+`http://localhost:4000/api/crearAeropuerto`
+
+enviamos a través de body, nombre, codigo de país y ICAO Code
+
+ejemplo:
+
+{
+    "cityName": "Santiago de Chile",
+    "countryCode": "CHL",
+    "icaoCode": "SCEL"
+}
+
+Como respuesta nos devuelve un json, con el clima de dias posteriores, agregandolo a la base de datos que ya hemos configurado.
