@@ -29,7 +29,7 @@ describe("Test api routes: '/ping, '/api/', '/api/crearAeropuertos', '/api/vi/ae
       expect(Object.keys(res)).to.have.lengthOf(18);
     });
   });
-
+  //afecta la base de datos
   // it("Crear aeropuerto, con su clima ", async () => {
   //   const response = await request(app)
   //     .post("/api/crearAeropuerto")
