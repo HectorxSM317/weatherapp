@@ -1,9 +1,9 @@
 const { Sequelize } = require("sequelize");
-const { DATABASE, USERNAME, PASSWORD, HOST_DATABASE } = require("./environments");
+const { DATABASE, PASSWORD, HOST_DATABASE, USERNAME_DATABASE } = require("./environments");
 
 const sequelize = new Sequelize(
   DATABASE,
-  USERNAME,
+  USERNAME_DATABASE,
   PASSWORD,
   {
     host: HOST_DATABASE,
