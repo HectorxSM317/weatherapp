@@ -12,7 +12,6 @@ app.use(cors())
 app.use(express.json())
 initSequelize()
 
-app.get('/', (req, res) => res.json({info: "'Node.js, Express, and Postgres API'"}))
 app.get('/ping', (req, res) => res.json('pong'))
 app.use('/api', router)
 

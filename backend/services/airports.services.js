@@ -28,11 +28,11 @@ const airportsService = {
   },
 
   getAllWeatherAirports: async ({ at }) => {
-    return (response = await Airport.findAll({
+    return response = await Airport.findAll({
       where: {
         created_at: at,
       },
-    }));
+    });
   },
   getWeatherAirportByIcaoCodeDetMoment: async ({ icaoCode }, { at }) => {
     const response = await Airport.findOne({
@@ -45,7 +45,6 @@ const airportsService = {
     return response
   },
   getWeatherAirportByIcaoCodeInterval: async({ icaoCode }, {desde, hasta, frecuencia}) => {
-    console.log("hereyes");
     const response = await Airport.findAll({
       where: {
         icaoCode,
