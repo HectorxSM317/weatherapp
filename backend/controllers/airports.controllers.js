@@ -9,7 +9,8 @@ const weatherControllers = {
       const weatherAirport = await airportsService.createWeatherByAirport(weatherForecast, icaoCode);
       res.json({ weatherAirport });
     } catch (error) {
-      console.log(error.message);
+      res.status(500).json({ error: error.message });
+
     }
   },
   getAllWeatherAirports: async (req, res) => {
@@ -17,7 +18,8 @@ const weatherControllers = {
       const airports = await airportsService.getAllWeatherAirports(req.query);
       res.json( airports );
     } catch (error) {
-      console.log(error.message);
+      res.status(500).json({ error: error.message });
+
     }
   },
   getWeatherAirportByIcaoCode: async (req, res) => {
@@ -30,7 +32,8 @@ const weatherControllers = {
         res.json({ airport });
       }
     } catch (error) {
-      console.log(error.message);
+      res.status(500).json({ error: error.message });
+
     }
   },
 };
